@@ -40,6 +40,17 @@
     --animation-property: var(--animation-duration) var(--animation-timing);
 }
 
+/* du texte sélectionné sera jaune sur fond rouge */
+::-moz-selection {
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+}
+  
+::selection {
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+}
+
 #app {
     opacity: 1;
     transition: opacity .3s ease;

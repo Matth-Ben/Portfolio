@@ -21,7 +21,6 @@ add_filter( 'timber/loader/loader', function ( $loader ) {
     $loader->addPath( get_template_directory() . "/views/utils", "utils" );
     $loader->addPath( get_template_directory() . "/views/components", "components" );
     $loader->addPath( get_template_directory() . "/views/acf-components", "acf-components" );
-    $loader->addPath( get_template_directory() . "/views/fragments", "fragments" );
 
     return $loader;
 } );

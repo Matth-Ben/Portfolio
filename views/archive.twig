@@ -1,19 +1,23 @@
-{% extends "base-page.twig" %}
+{% extends "app-content.twig" %}
 
 {% import "@components/breadcrumbs.twig" as breadcrumbs %}
+{% import "@components/image.twig" as image %}
 
-{% block pageContent %}
-    <div class="container flex flex-col gap-m mb-xl" show-elements>
-		<h1 class="split animation--text" show-element>{{ post.title }}</h1>
-        <div class="animation--fade-up mb-xxxl" show-element show-delay="300">
-            {{ breadcrumbs.default() }}
-        </div>
-        <div class="grid list">
-            {% for item in posts %}
-                <div>
-                    <p>{{ item.title }}</p>
+{% block app_content %}
+    <div class="container flex flex-col gap-m mt-100 d:mt-120 mb-xl">
+        <div class="grid grid-cols-6 d:grid-cols-12 gap">
+            <div class="col-span-6 d:col-span-10">
+                <div class="flex flex-wrap gap-l d:gap-y-l d:gap-x-12">
+                    {% for i, item in posts %}
+                        {% set fields = function('get_fields', item.ID) %}
+
+                        <a href="{{ fn('get_permalink', item.ID) }}" class="flex flex-col gap-6 w-390 d:w-157 animation--fade-up" show-element show-delay="{{i * 150}}">
+                            {{ image.default(fields.image, {'aspect_ratio':'aspect-[390/546] d:aspect-[157/220]'}) }}
+                            <div class="ts-mini uppercase">[{{ item.title }}]</div>
+                        </a>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            </div>
         </div>
 	</div>
 {% endblock %}

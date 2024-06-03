@@ -1,37 +1,32 @@
 {% macro default() %}
     {% set menus = get_menus() %}
-    {% set languages = get_languages() %}
 
     <header class="component component--header" role="banner">
-        <nav id="navigation" class="component__navigation" role="navigation" tabindex="-1">
-            <a class="component__logo" href="{{ get_home_url() }}">
-                {% include "@assets/svg/logo.svg" %}
-            </a>
-            <div class="component__links">
-                {% if menus['header-primary'] and menus['header-primary'].items %}
-                    <ul>
-                        {% for item in menus['header-primary'].items %}
-                            <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-                        {% endfor %}
+        <nav class="container mx-auto fixed left-0 right-0 w-full py-l">
+            <div class="grid grid-cols-6 lg:grid-cols-12 items-center gap-l">
+                <div class="col-span-6 lg:col-span-4">
+                <a href="{{ get_home_url() }}" class="ts-logo uppercase">
+                    <div class="flex flex-col">
+                        <div>Benoit</div>
+                        <div>Matthias</div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-span-6 lg:col-span-4 text-center">
+                    <ul class="menu flex items-center justify-center gap-s">
+                        {% if menus['header-primary'] and menus['header-primary'].items %}
+                            {% for item in menus['header-primary'].items %}
+                                <li class="ts-mini uppercase">
+                                    <a href="{{ item.url }}">{{ item.name }}</a>
+                                    {% if not loop.last %},{% endif %}
+                                </li>
+                            {% endfor %}
+                        {% endif %}
                     </ul>
-                {% endif %}
-                <button class="fcc w-xxl h-xxl child:w-24 child:h-24">
-                    {% include "@icons/search.svg" %}
-                </button>
-                <button class="fcc h-xxl px-s" data-pannel-content='{{ _self.languages() }}'>
-                    <span class="capitalize">{{ get_current_language() }}</span>
-                    <span class="child:w-24 child:h-24">
-                        {% include "@icons/chevron-down.svg" %}
-                    </span>
-                </button>
-                <button class="button button--burger button--light" data-pannel-content='{{ _self.menu(menus) }}'>
-                    <span>Menu</span>
-                    <span class="button__burger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
+                </div>
+                <div class="col-span-6 lg:col-span-4 text-right">
+                    <a class="ts-mini uppercase underline underline-offset-4" href="mailto:matthiasbenoit.pro@gmail.com?subject=Testing out mailto!">Send me a message</a>
+                </div>
             </div>
         </nav>
     </header>

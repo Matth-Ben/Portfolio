@@ -28,30 +28,30 @@ body {
     }
 }
 
-.component--alert {
-    @apply flex absolute -top-[var(--alert-height)] left-0 w-full bg-red text-light z-[100];
-    transition: top var(--animation-property);
+// .component--alert {
+//     @apply flex absolute -top-[var(--alert-height)] left-0 w-full bg-red text-light z-[100];
+//     transition: top var(--animation-property);
 
-    .marquee {
-        @apply items-center h-[var(--alert-height)];
+//     .marquee {
+//         @apply items-center h-[var(--alert-height)];
 
-        &__wrapper > div {
-            @apply flex items-center gap-m;
+//         &__wrapper > div {
+//             @apply flex items-center gap-m;
     
-            svg {
-                @apply w-18;
-            }
-        }
-    }
+//             svg {
+//                 @apply w-18;
+//             }
+//         }
+//     }
 
-    button {
-        @apply flex justify-center items-center w-[var(--alert-height)] h-[var(--alert-height)] text-light border-0 border-l border-light rounded-none;
+//     button {
+//         @apply flex justify-center items-center w-[var(--alert-height)] h-[var(--alert-height)] text-light border-0 border-l border-light rounded-none;
 
-        svg {
-            @apply w-24 h-24;
-        }
-    }
-}
+//         svg {
+//             @apply w-24 h-24;
+//         }
+//     }
+// }
 
 @include mobile() {
 

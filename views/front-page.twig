@@ -6,6 +6,12 @@
 {% set data = function('get_fields') %}
 
 {% block app_content %}
-    {{ hero.default(data.hero) }}
-    {{ flex_content.default(post.meta('content')) }}
+    <div class="flex flex-col gap">
+        {{ hero.default(data.hero) }}
+
+        <div class="container flex flex-col lg:flex-row items-center justify-between">
+            <div class='ts-h1 lg:ts-big'>Developer</div>
+            <div class='ts-h1 lg:ts-big'>Web</div>
+        </div>
+    </div>
 {% endblock %}

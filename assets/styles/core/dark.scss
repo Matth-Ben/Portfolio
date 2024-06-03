@@ -1,9 +1,5 @@
 $colors: map-get($data, colors);
 
-html * {
-    color: var(--color-dark);
-}
-
 .dark-reset,
 .dark-reset * {
     --color-dark: #{map-get($colors, dark)};

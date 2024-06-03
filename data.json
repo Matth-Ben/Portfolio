@@ -7,12 +7,14 @@
         "xxl": 1440
     },
     "gutters": {
-        "s": 1.6,
-        "m": 2.4
+        "s": 2,
+        "l": 2,
+        "xl": 2
     },
     "margins": {
-        "s": 2.4,
-        "xl": 4.8
+        "s": 2,
+        "l": 2,
+        "xl": 4
     },
     "breakpointDesktop": "l",
     "rem": {
@@ -20,16 +22,10 @@
         "xxl": "scale"
     },
     "colors": {
-        "dark": "rgba(0,0,0,1)",
-        "light": "rgba(255,255,255,1)",
-        "darksoft": "rgba(0,0,0,.5)",
-        "darkultrasoft": "rgba(0,0,0,.2)",
-        "lightsoft": "rgba(255,255,255,.5)",
-        "lightultrasoft": "rgba(255,255,255,.2)",
-        "red": "#EA4E32",
-        "primary": "#2F49CE",
-        "secondary": "#E98E39",
-        "tertiary": "#FFF1EA"
+        "dark": "#0D0000",
+        "light": "F0F2F1",
+        "primary": "#0D0000",
+        "secondary": "#F0F2F1"
     },
     "fonts": {
         "default": {
@@ -43,77 +39,93 @@
     },
     "textStyles": {
         "h1": {
-            "font-size": "5.6rem",
-            "line-height": "5.4rem"
+            "font-size": "6.4rem",
+            "line-height": "6.4rem",
+            "font-weight": 400,
+            "text-transform": "uppercase"
         },
         "h2": {
-            "font-size": "4rem",
-            "line-height": "4rem"
+            "font-size": "4.2rem",
+            "line-height": "3.8rem",
+            "font-weight": 900,
+            "text-transform": "uppercase"
         },
         "h3": {
-            "font-size": "2.4rem",
-            "line-height": "2.8rem"
+            "font-size": "2.8rem",
+            "line-height": "2.8rem",
+            "font-weight": 900,
+            "text-transform": "uppercase"
         },
         "h4": {
-            "font-size": "2.4rem",
-            "line-height": "2.4rem"
-        },
-        "h5": {
             "font-size": "2rem",
-            "line-height": "2.2rem"
-        },
-        "titles": {
-            "font-weight": 300,
-            "font-family": "heading"
+            "line-height": "2rem"
         },
         "body": {
-            "font-size": "1.6rem",
-            "line-height": "2.2rem"
+            "font-size": "2.4rem",
+            "line-height": "1",
+            "font-weight": 400
         },
         "label": {
-            "font-size": "1.4rem",
-            "line-height": "1.6rem"
+            "font-size": "1.6rem",
+            "line-height": "1.6rem",
+            "font-weight": 400,
+            "text-transform": "uppercase"
         },
-        "button": {
-            "font-size": "1.5rem",
-            "line-height": "1.7rem"
+        "big": {
+            "font-size": "15.4rem",
+            "line-height": "12.8rem",
+            "font-weight": 700,
+            "text-transform": "uppercase"
+        },
+        "mini": {
+            "font-size": "1.4rem",
+            "line-height": "1.4rem",
+            "font-weight": 400
+        },
+        "logo": {
+            "font-size": "3.2rem",
+            "line-height": "2.6rem",
+            "font-weight": 700
         },
         "desktop": {
             "h1": {
-                "font-size": "8.8rem",
-                "line-height": "8rem"
+                "font-size": "6.4rem",
+                "line-height": "6.4rem",
+                "font-weight": 900
             },
             "h2": {
-                "font-size": "4.8rem",
-                "line-height": "4.8rem"
+                "font-size": "7.2rem",
+                "line-height": "6.8rem",
+                "font-weight": 900
             },
             "h3": {
-                "font-size": "3.2rem",
-                "line-height": "3.2rem"
+                "font-size": "4rem",
+                "line-height": "4rem",
+                "font-weight": 900
             }
         }
     },
     "spacings": {
-        "s": 0.4,
-        "m": 0.8,
-        "l": 1.6,
-        "xl": 2.4,
-        "xxl": 4.8,
-        "xxxl": 9.6,
-        "huge": 12,
+        "s": 0.5,
+        "m": 1,
+        "l": 2,
+        "xl": 4,
+        "xxl": 8,
+        "xxxl": 16,
+        "huge": 32,
         "desktop": {
-            "s": 0.4,
-            "m": 0.8,
-            "l": 1.6,
-            "xl": 2.4,
-            "xxl": 4.8,
-            "xxxl": 9.6,
-            "huge": 12
+            "s": 0.5,
+            "m": 1,
+            "l": 2,
+            "xl": 4,
+            "xxl": 8,
+            "xxxl": 16,
+            "huge": 32
         }
     },
     "maxColumns": {
         "s": 6,
-        "m": 8,
+        "m": 6,
         "l": 12
     },
     "radius": 0.8,

@@ -41,11 +41,11 @@
         }
         
         &__description {
-            @apply ts-button max-w-[30rem];
+            @apply max-w-[30rem];
         }
         
         &__privacy-policy {
-            @apply ts-button underline;
+            @apply underline;
         }
 
         &__buttons {
