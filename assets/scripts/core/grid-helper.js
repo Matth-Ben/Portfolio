@@ -1,14 +1,27 @@
 export default function()
 {
-    if ( document.body.classList.contains( 'debug' ) && !document.body.classList.contains( 'grid-helper-init' ) ) {
-        document.body.classList.add( 'grid-helper-init' )
-        
-        window.addEventListener( 'keyup', e => {
-            if ( e.key && e.key === "g" ) {
-                document.querySelectorAll( '.grid-helper' ).forEach( element => {
-                    element.classList.toggle( 'active' )
-                } )
-            }
-        } )
-    }
+    let pressCount = 0;
+
+    const handleKeyUp = (e) => {
+        if (e.shiftKey && e.key === 'G') {
+            pressCount++;
+            toggleVisibility();
+        }
+    };
+
+    const toggleVisibility = () => {
+        const grid = document.querySelector('.grid-helper');
+        if (pressCount % 3 === 1) {
+            grid.classList.add('active');
+            grid.classList.remove('active-more');
+        } else if (pressCount % 3 === 2) {
+            grid.classList.remove('active');
+            grid.classList.add('active-more');
+        } else {
+            grid.classList.remove('active');
+            grid.classList.remove('active-more');
+        }
+    };
+
+    window.addEventListener('keyup', handleKeyUp);
 }

@@ -1,4 +1,21 @@
-.grid-helper.active {
-    visibility: visible;
-    pointer-events: none;
+.grid-helper {
+    @apply container fixed inset-0 w-full h-full opacity-20 z-[1000] invisible;
+
+    &::before {
+        @apply absolute top-0 left-0 w-full h-8 bg-[blue] opacity-60;
+        content: "";
+    }
+
+    &::after {
+        @apply absolute bottom-0 left-0 w-full h-8 bg-[green] opacity-60;
+        content: "";
+    }
+
+    &.active {
+        @apply visible;
+
+        &-more {
+            @apply opacity-40 visible;
+        }
+    }
 }
