@@ -1,0 +1,11 @@
+{% extends "app-content.twig" %}
+
+{% import "@acf-components/hero.twig" as hero %}
+{% import "@components/flex-content.twig" as flex_content %}
+
+{% set data = function('get_fields') %}
+
+{% block app_content %}
+    {{ hero.default(data.hero) }}
+    {{ flex_content.default(post.meta('content')) }}
+{% endblock %}

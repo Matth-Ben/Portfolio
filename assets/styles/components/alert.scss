@@ -1,0 +1,61 @@
+body {
+    --alert-height: 5.6rem;
+    transition: margin-top var(--animation-property);
+    
+    &.show-alert {
+        margin-top: var(--alert-height);
+
+        .component--alert {
+            top: 0;
+        }
+        
+        &:not(.headroom--not-top) .component--header {
+            top: var(--alert-height);
+            margin-top: var(--spacing-l);
+        }
+
+        &[data-wordpress-class*="home"] {
+            margin-top: var(--alert-height);
+
+            .component--hero {
+                height: calc(100vh - var(--alert-height));
+            }
+        }
+
+        .component--curtain-event {
+            // height: calc(100% - var(--alert-height));
+        }
+    }
+}
+
+.component--alert {
+    @apply flex absolute -top-[var(--alert-height)] left-0 w-full bg-red text-light z-[100];
+    transition: top var(--animation-property);
+
+    .marquee {
+        @apply items-center h-[var(--alert-height)];
+
+        &__wrapper > div {
+            @apply flex items-center gap-m;
+    
+            svg {
+                @apply w-18;
+            }
+        }
+    }
+
+    button {
+        @apply flex justify-center items-center w-[var(--alert-height)] h-[var(--alert-height)] text-light border-0 border-l border-light rounded-none;
+
+        svg {
+            @apply w-24 h-24;
+        }
+    }
+}
+
+@include mobile() {
+
+    body.show-alert .component--header .component__wrapper-main .component__links {
+        height: calc(100vh - var(--margin) * 2 - var(--spacing-l) - var(--alert-height));
+    }
+}

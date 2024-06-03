@@ -1,0 +1,14 @@
+.component--form {
+
+    input {
+        @apply w-full py-s px-m border border-dark;
+    }
+
+    p {
+        @apply flex flex-col gap-s mb-l;
+
+        br {
+            @apply hidden;
+        }
+    } 
+}

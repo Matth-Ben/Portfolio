@@ -1,0 +1,50 @@
+@import 'core';
+
+@import 'swiper/css';
+@import 'flickity';
+
+@import 'animation.scss';
+
+// layouts
+// @import 'layouts/Page.scss';
+// @import 'layouts/Single.scss';
+// @import 'layouts/Archive.scss';
+@import 'layouts/Home.scss';
+
+// components
+@import 'components/header.scss';
+@import 'components/welcome.scss';
+@import 'components/accordion.scss';
+@import 'components/alert.scss';
+@import 'components/button.scss';
+@import 'components/card.scss';
+@import 'components/headroom.scss';
+@import 'components/marquee.scss';
+@import 'components/tag.scss';
+@import 'components/cookies-manager.scss';
+@import 'components/youtube-manager.scss';
+@import 'components/quick-links.scss';
+@import 'components/pannel.scss';
+
+// acf components
+@import 'acf-components/section.scss';
+@import 'acf-components/carousel-cards.scss';
+@import 'acf-components/carousel-full.scss';
+@import 'acf-components/embed.scss';
+@import 'acf-components/form.scss';
+
+// animation
+:root {
+    --animation-duration: 0.6s;
+    --animation-timing: cubic-bezier(0, 0, 0, 1);
+    --animation-property: var(--animation-duration) var(--animation-timing);
+}
+
+#app {
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+
+.page-switching #app {
+    opacity: 0;
+}

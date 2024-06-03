@@ -1,0 +1,31 @@
+<div class="component component--cookies-manager">
+    {# Personnaliser / Je refuse / J'accepte #}
+    <div class="component__main active">
+        <p class="component__title">Ce site utilise des témoins (cookies)</p>
+        <p class="component__description">Nous et nos partenaires utilisons des témoins pour améliorer votre expérience et comprendre comment nos plateformes numériques sont utilisées. Consultez notre politique de confidentialité pour en savoir plus.</p>
+        <a class="component__privacy-policy" href="#0">Politique de confidentialité</a>
+        <div class="component__buttons">
+            <button class="component__button-personalize" type="button">Personnaliser</button>
+            <button class="component__button-decline" type="button">Refuser</button>
+            <button class="component__button-accept" type="button">Accepter</button>
+        </div>
+    </div>
+    {# Différents service à activer #}
+    <div class="component__preferences">
+        <p class="component__title">
+            Préférences
+            <button class="component__back" type="button">
+                {% include "@icons/arrow-left.svg" %}
+            </button>
+        </p>
+        <div class="component__services">
+            <div class="component__service" data-name="necessary">
+                <span>Témoins nécessaires</span>
+                <button type="button"></button>
+            </div>
+        </div>
+        <div class="component__buttons">
+            <button class="component__button-confirm" type="button">Confirmer</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+.component--pannel {
+    @apply dark fixed top-0 right-0 h-[100lvh] p-xl bg-light z-[10];
+    width: calc(#{get-width-of-columns(5)} + var(--margin));
+    padding-top: calc(var(--margin) * 2 + var(--spacing-xxl));
+    transform: translate3d(100%, 0, 0);
+    transition: transform var(--animation-property);
+    z-index: 10;
+
+    &.active {
+        transform: translate3d(0, 0, 0);
+    }
+
+    &.is-changing .component__wrapper {
+        opacity: 0;
+    }
+
+    .component {
+
+        &__wrapper {
+            transition: opacity calc(var(--animation-duration) / 2) ease;
+
+            & > * {
+                @apply w-full h-full;
+            }
+        }
+    }
+}
+
+body[wp-class*="home"].show-pannel:not(.headroom--top),
+body:not([wp-class*="home"]).show-pannel {
+
+    .component--header .component__links {
+        @apply dark;
+    }
+}

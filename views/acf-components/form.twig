@@ -1,0 +1,5 @@
+{% macro default(data) %}
+    <div class="component--form">
+        {{ function('do_shortcode', '[advancedform id="' ~ data.form[0] ~ '"]') }}
+    </div>
+{% endmacro %}

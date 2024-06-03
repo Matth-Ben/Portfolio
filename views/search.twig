@@ -1,0 +1,11 @@
+{% extends "base-page.twig" %}
+
+{% block content %}
+  <div class="content-wrapper">
+    {% for post in posts %}
+      <pre>
+        {{ dump(post.post_title) }}
+      </pre>
+    {% endfor %}
+  </div>
+{% endblock %}

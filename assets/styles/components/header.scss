@@ -1,0 +1,27 @@
+.component--header {
+    @apply p-margin;
+
+    .component {
+
+        &__logo svg {
+            @apply h-28 text-primary;
+        }
+
+        &__navigation {
+            @apply flex justify-between items-center w-full;
+        }
+        
+        &__links {
+            @apply flex justify-between items-center gap-l;
+            
+            ul {
+                @apply flex justify-between items-center gap-l;
+            }
+        }
+    }
+
+    * {
+        color: var(--color-dark);
+        transition: color .3s ease, border-color .3s ease, background-color .3s ease;
+    }
+}

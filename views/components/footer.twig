@@ -1,0 +1,11 @@
+{% set social_network = get_social_network() %}
+
+<footer class="footer container" role="contentinfo">
+    <ul class="flex items-center gap-8">
+        {% for index, item in social_network %}
+            {% if item %}
+                <li><a href="{{item}}" target="_blank"><i class="fa-brands fa-{{index}}"></i></a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</footer>

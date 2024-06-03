@@ -1,0 +1,42 @@
+{% macro default(data) %}
+    {% import "@components/card.twig" as card %}
+
+    {% set posts = data['posts_' ~ data.post_type] %}
+
+    {% if posts %}
+         <div class="carousel carousel--cards flex flex-col gap-xxl" data-post-type="{{ data.post_type }}" show-elements>
+            <div class="flex justify-between items-center">
+                <div>
+                    {% if data.title %}
+                        <h2 class="ts-h3 split animation--text" show-element>{{ data.title }}</h2>
+                    {% endif %}
+                </div>
+                <a class="flex items-center gap-s animation--fade-up" href="#0" show-element show-delay="600">
+                    <span>Discover</span>
+                    <span class="w-24">
+                        {% include "@icons/arrow-right.svg" %}
+                    </span>
+                </a>
+            </div>
+            <div class="carousel__items swiper animation--fade-up" show-element show-delay="300">
+                <div class="swiper-wrapper">
+                    {% for p in posts %}
+                        <div class="swiper-slide">
+                            {{ card.default(p) }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="flex justify-between">
+                <div class="carousel__navigation animation--fade-up" show-element show-delay="900">
+                    <button class="carousel__previous button button--icon button--light">
+                        {% include "@icons/arrow-left.svg" %}
+                    </button>
+                    <button class="carousel__next button button--icon button--light">
+                        {% include "@icons/arrow-right.svg" %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}

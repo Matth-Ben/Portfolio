@@ -1,0 +1,5 @@
+{% macro default(data) %}
+    <div class="container">
+	    <div class="component component--embed {% if 'youtube' in data.code %}component--youtube-manager{% endif %} bg-dark" data-iframe='{{ data.code }}'></div>
+	</div>
+{% endmacro %}

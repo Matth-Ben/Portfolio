@@ -1,0 +1,75 @@
+{% macro default() %}
+    {% set menus = get_menus() %}
+    {% set languages = get_languages() %}
+
+    <header class="component component--header" role="banner">
+        <nav id="navigation" class="component__navigation" role="navigation" tabindex="-1">
+            <a class="component__logo" href="{{ get_home_url() }}">
+                {% include "@assets/svg/logo.svg" %}
+            </a>
+            <div class="component__links">
+                {% if menus['header-primary'] and menus['header-primary'].items %}
+                    <ul>
+                        {% for item in menus['header-primary'].items %}
+                            <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <button class="fcc w-xxl h-xxl child:w-24 child:h-24">
+                    {% include "@icons/search.svg" %}
+                </button>
+                <button class="fcc h-xxl px-s" data-pannel-content='{{ _self.languages() }}'>
+                    <span class="capitalize">{{ get_current_language() }}</span>
+                    <span class="child:w-24 child:h-24">
+                        {% include "@icons/chevron-down.svg" %}
+                    </span>
+                </button>
+                <button class="button button--burger button--light" data-pannel-content='{{ _self.menu(menus) }}'>
+                    <span>Menu</span>
+                    <span class="button__burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+        </nav>
+    </header>
+{% endmacro %}
+
+{% macro menu(menus) %}
+    {% if menus['header-secondary'].items %}
+        <ul class="pannel__menu">
+            {% for item in menus['header-secondary'].items %}
+                <li>
+                    {% if item.children %}
+                        <button>{{ item.name }}</button>
+                        <ul>
+                            {% for i in item.children %}
+                                <li>
+                                    <a href="{{ i.url }}" target="{{ i.target }}">{{ i.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <a href="{{ item.url }}" target="{{ item.target }}">{{ item.name }}</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% macro languages() %}
+    {% set languages = get_languages() %}
+
+    {% if languages %}
+        <ul class="pannel__langages">
+            {% for language in languages %}
+                <li>
+                    <a href="{{ language.url }}">{{ language.slug }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

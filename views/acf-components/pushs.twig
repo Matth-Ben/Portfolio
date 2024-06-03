@@ -1,0 +1,19 @@
+{% macro default(data) %}
+    <div class="component--pushs flex gap text-center">
+        {% for item in data.items %}
+            <div class="flex flex-col items-center gap-xxl w-full px-xxl py-xxxl bg-tertiary">
+                <div class="flex flex-col items-center gap-l">
+                    {% if item.title %}
+                        <h2>{{ item.title }}</h2>
+                    {% endif %}
+                    {% if item.text %}
+                        <p>{{ item.text }}</p>
+                    {% endif %}
+                </div>
+                {% if item.button.title and item.button.url %}
+                    <a class="button" href="{{ item.button.url }}" target="{{ item.button.target }}">{{ item.button.title }}</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

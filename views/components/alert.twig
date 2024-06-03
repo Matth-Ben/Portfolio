@@ -1,0 +1,15 @@
+{% macro default() %}
+    {% import "@utils/marquee.twig" as marquee %}
+
+    {% set data = function('get_field', 'headband', 'option') %}
+    {% set alert_message = '<span>' ~ data['headband-content'] ~ '</span>' ~ '<span><i class="fa-sharp fa-solid fa-circle-exclamation"></i></span>' %}
+
+    {% if data['headband-display'] %}
+        <div class="component component--alert">
+            {{ marquee.default(alert_message) }}
+            <button>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    {% endif %}
+{% endmacro %}

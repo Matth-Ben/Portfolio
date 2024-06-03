@@ -1,0 +1,7 @@
+.component--embed {
+    @apply dark flex justify-center items-center bg-light;
+
+    a.button {
+        @apply text-light;
+    }
+}

@@ -1,0 +1,7 @@
+.tag {
+    @apply ts-label fcc h-28 px-m text-white bg-dark rounded-full;
+
+    &--light {
+        @apply text-dark bg-light border border-dark;
+    }
+}

@@ -1,0 +1,53 @@
+.animation {
+    
+    &--text {
+        --ratio: .75;
+        transform: translate3d(0, calc(var(--ts-line-height) / 2), 0);
+
+        &.split[show-element] {
+            visibility: hidden;
+        
+            &.words {
+        
+                .word,
+                .whitespace {
+                    display: inline-table;
+                    overflow: hidden;
+                    vertical-align: top;
+                    line-height: calc((var(--ratio) * 2) * var(--ts-line-height)); //
+                    margin-top: calc((var(--ratio) * -1) * var(--ts-line-height)); //
+        
+                    span {
+                        display: inline-block;
+                        transform: translate3d(0, 150%, 0) rotate(-4deg);
+                    }
+                }
+        
+                &.is-in-view {
+                    visibility: visible;
+            
+                    .word.is-show span {
+                        transform: translate3d(0, 0, 0);
+                        transition: transform var(--animation-property);
+                    }
+
+                    .whitespace {
+                        // display: inline-block;
+                        // transform: translate3d(0, -.5em, 0);
+                    }
+                }
+            }
+        }
+    }
+
+    &--fade-up {
+        opacity: 0;
+        transform: translate3d(0, var(--spacing-l), 0);
+        transition: opacity var(--animation-property), transform var(--animation-property);
+
+        &.is-in-view {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}

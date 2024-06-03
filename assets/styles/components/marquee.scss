@@ -1,0 +1,10 @@
+.marquee {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    & > * {
+        padding-right: var(--spacing-m);
+        flex-shrink: 0;
+    }
+}

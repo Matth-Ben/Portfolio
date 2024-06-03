@@ -1,0 +1,7 @@
+.component--youtube-manager {
+    @apply aspect-[2/1];
+
+    iframe {
+        @apply w-full h-full;
+    }
+}

@@ -1,0 +1,23 @@
+{% macro default(data) %}
+    {% import "@components/image.twig" as image %}
+
+    <div class="component--hero dark flex relative h-screen p-margin overflow-hidden" show-elements>
+        <div class="absolute inset-0 w-full h-full z-[0]" parallax>
+            {{ image.full(data.image) }}
+        </div>
+        <div class="absolute inset-0 w-full h-full bg-light opacity-20 z-[1]"></div>
+        <div class="flex flex-col justify-center gap-l h-full d:w-col-8 z-[2]">
+            {% if data.title %}
+                <h1 class="split animation--text" show-element>{{ data.title }}</h1>
+            {% endif %}
+            {% if data.subtitle %}
+                <p class="ts-h4 split animation--text" show-element show-delay="300">{{ data.subtitle }}</p>
+            {% endif %}
+        </div>
+        {% if data.button.url and data.button.title %}
+            <span class="absolute bottom-margin left-margin z-[2]">
+                <a class="button animation--fade-up" href="{{ data.button.url }}" target="{{ data.button.target }}" show-element show-delay="600">{{ data.button.title }}</a>
+            </span>
+        {% endif %}
+    </div>
+{% endmacro %}

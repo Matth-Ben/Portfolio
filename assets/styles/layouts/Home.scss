@@ -1,0 +1,17 @@
+body[wp-class*="home"]:not(.headroom--not-top):not(.page-switching) {
+
+    .component--header {
+        @apply dark;
+    }
+}
+
+#app-content.home {
+
+    & > .component--acf-flex-content {
+        @apply flex flex-col gap-xxxl px-margin py-xxxl overflow-hidden;
+        
+        & > .component--testimony {
+            @apply d:w-col-8;
+        }
+    }
+}

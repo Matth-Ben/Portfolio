@@ -1,0 +1,129 @@
+.component--cookies-manager {
+    position: fixed;
+    bottom: var(--margin);
+    right: var(--margin);
+    background-color: var(--color-light);
+    border-radius: .8rem;
+    z-index: 10;
+
+    &:not(.active) {
+        display: none;
+    }
+
+    & > div:not(.active) {
+        visibility: hidden;
+    }
+
+    .component {
+        
+        &__main,
+        &__preferences {
+            @apply flex flex-col gap-s p-m bg-light rounded;
+        }
+
+        &__preferences {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        &__title {
+            @apply ts-h4 flex justify-between items-center gap-l;
+
+            button {
+                
+                svg {
+                    @apply h-[1.6rem];
+                }
+            }
+        }
+        
+        &__description {
+            @apply ts-button max-w-[30rem];
+        }
+        
+        &__privacy-policy {
+            @apply ts-button underline;
+        }
+
+        &__buttons {
+            @apply flex gap-s mt-m;
+
+            & > button {
+                @apply w-full;
+            } 
+        }
+
+        &__button-personalize,
+        &__button-decline {
+            @apply button button--light;
+        }
+        
+        &__button-accept,
+        &__button-confirm {
+            @apply button;
+        }
+
+        &__services {
+            @apply flex flex-col gap-s p-m border border-dark rounded;
+        }
+
+        &__service {
+            @apply flex justify-between gap-l;
+
+            span {
+                @apply ts-label;
+            }
+
+            button {
+                width: 4rem;
+                height: 2rem;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--color-light);
+                    border: solid 1px var(--color-dark);
+                    border-radius: 10rem;
+                    transition: background-color .3s ease;
+                }
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    width: calc(2rem - 6px);
+                    height: calc(2rem - 6px);
+                    margin: 3px;
+                    background-color: var(--color-dark);
+                    border-radius: 10rem;
+                    transition: background-color .3s ease, left .3s ease;
+                }
+            }
+
+            &.active button,
+            &[data-name="necessary"] button {
+
+                &::before {
+                    background-color: var(--color-dark);
+                }
+
+                &::after {
+                    background-color: var(--color-light);
+                    left: calc(100% - 2rem);
+                }
+            }
+
+            &[data-name="necessary"] button {
+                opacity: .3;
+            }
+
+        }
+    }
+}

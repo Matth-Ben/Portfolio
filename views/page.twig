@@ -1,0 +1,16 @@
+{% extends "base-page.twig" %}
+
+{% import "@components/flex-content.twig" as flex_content %}
+{% import "@components/image.twig" as image %}
+
+{% block pageContent %}
+	<div class="container mb-xl">
+		<h1 class="split animation--text" show-element>{{ post.title }}</h1>
+	</div>
+
+	<pre>
+		{{ dump(get_breadcrumbs()) }}
+	</pre>
+
+	{{ flex_content.default(post.meta('content')) }}
+{% endblock %}

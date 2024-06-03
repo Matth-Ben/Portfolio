@@ -1,0 +1,128 @@
+$data: (
+  breakpoints: (
+    s: 0,
+    m: 768,
+    l: 1024,
+    xl: 1280,
+    xxl: 1440
+  ),
+  gutters: (
+    s: 2.4,
+    l: 3.2,
+    xl: 4
+  ),
+  margins: (
+    s: 2.4,
+    l: 3.2,
+    xl: 4
+  ),
+  breakpointDesktop: m,
+  rem: (
+    s: 10px,
+    xxl: scale
+  ),
+  colors: (
+    dark: #000,
+    darkultralight: rgba(0, 0, 0, .3),
+    light: #fff,
+    primary: #FED4F7,
+    secondary: #FBF2A9
+  ),
+  fonts: (
+    default: (
+      name: PP Mori,
+      serif: sans-serif
+    )
+  ),
+  textStyles: (
+    h1: (
+      font-size: 8.8rem,
+      line-height: 9rem
+    ),
+    h2: (
+      font-size: 4.8rem,
+      line-height: 5.6rem
+    ),
+    h3: (
+      font-size: 3.2rem,
+      line-height: 4rem
+    ),
+    h4: (
+      font-size: 2.4rem,
+      line-height: 3.2rem
+    ),
+    body: (
+      font-size: 1.6rem,
+      line-height: 2.4rem,
+      font-family: "default",
+      font-weight: 400
+    ),
+    body2: (
+      font-size: 1.6rem,
+      line-height: 2.4rem
+    ),
+    label: (
+      font-size: 1.8rem,
+      line-height: 2.4rem
+    ),
+    button: (
+      font-size: 1.8rem,
+      line-height: 2.4rem
+    ),
+    desktop: (
+      body: (
+        font-size: 2rem,
+        line-height: 2.8rem,
+        font-family: "default",
+        font-weight: 400
+      )
+    )
+  ),
+  spacings: (
+    s: 0.4,
+    m: 0.8,
+    l: 2.4,
+    xl: 2.4,
+    xxl: 3.2,
+    xxxl: 4.8,
+    huge: 12,
+    desktop: (
+      xl: 3.2,
+      xxl: 4,
+      xxxl: 6.4,
+      huge: 16
+    )
+  ),
+  maxColumns: (
+    s: 6,
+    m: 8,
+    l: 12
+  ),
+  radius: 0.8,
+  lists: (
+    default: (
+      s: 1,
+      m: 3,
+      l: 3,
+      xl: 4,
+      xxl: 4
+    ),
+    event: (
+      s: 1,
+      m: 3,
+      l: 3,
+      xl: 3,
+      xxl: 3
+    )
+  ),
+  animations: (
+    default: (
+      duration: 900,
+      timing: ease
+    ),
+    secondary: (
+      duration: 500,
+      timing: ease
+    )
+  )
+);

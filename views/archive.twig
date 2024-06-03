@@ -1,0 +1,19 @@
+{% extends "base-page.twig" %}
+
+{% import "@components/breadcrumbs.twig" as breadcrumbs %}
+
+{% block pageContent %}
+    <div class="container flex flex-col gap-m mb-xl" show-elements>
+		<h1 class="split animation--text" show-element>{{ post.title }}</h1>
+        <div class="animation--fade-up mb-xxxl" show-element show-delay="300">
+            {{ breadcrumbs.default() }}
+        </div>
+        <div class="grid list">
+            {% for item in posts %}
+                <div>
+                    <p>{{ item.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+	</div>
+{% endblock %}

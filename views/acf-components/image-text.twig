@@ -1,0 +1,22 @@
+{% macro default(data) %}
+    {% import "@components/image.twig" as image %}
+
+    <div class="component--image-text flex gap">
+        <div class="fes flex-col gap-xl w-full d:pr-xxxl">
+            <div class="flex flex-col gap-m">
+                {% if data.title %}
+                    <h2>{{ data.title }}</h2>
+                {% endif %}
+                {% if data.text %}
+                    <p>{{ data.text }}</p>
+                {% endif %}
+            </div>
+            {% if data.button.title and data.button.url %}
+                <a class="button" href="{{ data.button.url }}" target="{{ data.button.target }}">{{ data.button.title }}</a>
+            {% endif %}
+        </div>
+        <div class="w-full">
+            {{ image.default(data.image) }}
+        </div>
+    </div>
+{% endmacro %}
