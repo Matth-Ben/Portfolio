@@ -1,0 +1,27 @@
+.carousel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 32rem;
+    overflow: hidden;
+}
+.carousel-projects {
+    // position: absolute;
+    // left: 50%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    // transform: translateX(-50%);
+    transition: transform 0.5s ease;
+}
+.carousel-projects__item {
+    .carousel-projects__image {
+        @apply w-157 h-220;
+        transition: width 0.3s, height 0.3s;
+    }
+}
+.carousel-projects__item.current {
+    .carousel-projects__image {
+        @apply w-235 h-329;
+    }
+}

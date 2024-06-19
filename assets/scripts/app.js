@@ -6,9 +6,7 @@ import './components/welcome'
 import './components/pannel'
 
 // acf components
-import './acf-components/accordions'
-import './acf-components/carousel-cards'
-import './acf-components/carousel-full'
+import './acf-components/carousel-projects'
 
 
 ////

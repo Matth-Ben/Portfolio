@@ -25,7 +25,10 @@ if ( isset( $_GET['styleguide'] ) ) {
 elseif ( is_front_page() ) {
 	$timber_post = new \Timber\Post();
 	$context['post'] = $timber_post;
-	
+	$context['projects'] = Timber::get_posts([
+		'post_type' => 'project'
+	]);
+
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );
 }
 
