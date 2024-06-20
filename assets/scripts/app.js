@@ -6,7 +6,6 @@ import './components/welcome'
 import './components/pannel'
 
 // acf components
-import './acf-components/carousel-projects'
 
 
 ////

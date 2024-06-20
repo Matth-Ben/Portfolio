@@ -8,19 +8,28 @@
 
 {% block app_content %}
     <div class="relative flex flex-col gap h-screen overflow-hidden">
-        {{ hero.default(data.hero) }}
-        
-        <div class="carousel-container">
-            <div class="carousel-projects">
-                {% for project in projects %}
-                    {% set fields = function('get_fields', project) %}
-                    <a href="{{ fn('get_permalink', project) }}" class="carousel-projects__item">
-                        <div class="carousel-projects__image">
-                            {{ image.default(fields.image, {'aspect_ratio':'aspect-[157/220]'}) }}
+        <div class="container mt-120">
+            <div class="grid grid-cols-6 d:grid-cols-12 gap">
+                <div class="col-span-6 d:col-span-4">
+                    {% if data.hero.text %}
+                        <div class="ts-body split animation--text" show-element show-delay="300">{{ data.hero.text }}</div>
+                    {% endif %}
+                </div>
+                <div class="col-span-6 d:col-span-8">
+                    <div class="carousel-container">
+                        <div class="carousel-projects">
+                            {% for project in projects %}
+                                {% set fields = function('get_fields', project) %}
+                                <a href="{{ fn('get_permalink', project) }}" class="carousel-projects__item">
+                                    <div class="carousel-projects__image">
+                                        {{ image.default(fields.image, {'aspect_ratio':'aspect-[157/220]'}) }}
+                                    </div>
+                                    <div class="ts-mini mt-s">[{{project.post_title}}]</div>
+                                </a>
+                            {% endfor %}
                         </div>
-                        <div class="ts-mini mt-s">[{{project.post_title}}]</div>
-                    </a>
-                {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -26,6 +26,7 @@ elseif ( is_front_page() ) {
 	$timber_post = new \Timber\Post();
 	$context['post'] = $timber_post;
 	$context['projects'] = Timber::get_posts([
+		'posts_per_page' => 3,
 		'post_type' => 'project'
 	]);
 

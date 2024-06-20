@@ -1,17 +1,14 @@
 .carousel-container {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     height: 32rem;
     overflow: hidden;
 }
 .carousel-projects {
-    // position: absolute;
-    // left: 50%;
     display: flex;
     gap: 2rem;
     flex-wrap: nowrap;
-    // transform: translateX(-50%);
     transition: transform 0.5s ease;
 }
 .carousel-projects__item {
